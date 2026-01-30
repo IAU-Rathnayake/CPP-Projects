@@ -1,32 +1,27 @@
 #include <iostream>
-#include <cmath> 
-#include <string>
+#include <cmath>
 
+int main() {
+    double sideA, sideB, hypotenuse;
 
-using std::cout;
-using std::cin;
-using std::string;
+    // Get input from user
+    std::cout << "Enter side A: ";
+    std::cin >> sideA;
 
-int main()
-{
-    // 1. Initialization
-    // Giving variables 
-    double a = 0.0;
-    double b = 0.0;
-    double c = 0.0;
+    std::cout << "Enter side B: ";
+    std::cin >> sideB;
 
-    // 2. User Input
-    cout << "Enter side A: ";
-    cin >> a;
+    // Validate input
+    if (sideA <= 0 || sideB <= 0) {
+        std::cout << "Error: Sides must be positive numbers!\n";
+        return 1;
+    }
 
-    cout << "Enter side B: ";
-    cin >> b;
+    // Calculate hypotenuse using Pythagorean theorem
+    hypotenuse = std::sqrt(sideA * sideA + sideB * sideB);
 
-    // 3. Calculation
-    c = sqrt(pow(a, 2) + pow(b, 2));
-
-    // 4. Output
-    cout << "Hypotenuse: " << c << "\n";
+    // Display result
+    std::cout << "Hypotenuse: " << hypotenuse << "\n";
 
     return 0;
 }
